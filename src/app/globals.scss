@@ -1,0 +1,33 @@
+@import "../styles/colors";
+@import "../styles/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: $primary-bg;
+  color: $white;
+  font-family: $body-font;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
