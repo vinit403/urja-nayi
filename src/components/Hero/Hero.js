@@ -115,7 +115,7 @@ const Hero = () => {
         <div className="image-wrapper">
           <Image
             src="/assets/images/urja.jpg"
-            alt="Urja"
+            alt="Urja Nayi"
             fill
             priority
             className="hero-image"
