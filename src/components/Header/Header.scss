@@ -4,7 +4,7 @@
 .main-header {
   width: 100%;
 
-  padding: 15px 70px;
+  padding: 18px 70px;
 
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@
   }
 
   .logo {
-    font-size: 28px;
+    font-size: 34px;
 
     font-family: $title-font;
 
@@ -39,12 +39,14 @@
 
     font-weight: 600;
 
+    z-index: 1001;
+
     span {
       color: $gold;
     }
   }
 
-  nav {
+  .desktop-nav {
     display: flex;
     align-items: center;
 
@@ -59,55 +61,257 @@
 
       transition: 0.3s;
 
+      position: relative;
+
       &:hover {
         color: $gold;
       }
+
+      &::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -6px;
+
+        width: 0%;
+        height: 1px;
+
+        background: $gold;
+
+        transition: 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
+  }
+
+  .menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 1001;
+
+    span {
+      width: 28px;
+      height: 2px;
+
+      background: white;
+
+      position: absolute;
+
+      left: 7px;
+
+      transition: 0.4s ease;
+    }
+
+    span:nth-child(1) {
+      top: 12px;
+    }
+
+    span:nth-child(2) {
+      top: 20px;
+    }
+
+    span:nth-child(3) {
+      top: 28px;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg);
+
+        top: 20px;
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+
+        top: 20px;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100vh;
+
+  z-index: 998;
+
+  transition: 0.5s ease;
+
+  display: flex;
+
+  &.open {
+    left: 0;
+  }
+
+  .mobile-menu-bg {
+    width: 100%;
+background:
+  radial-gradient(
+    circle at top,
+    rgba(201, 169, 97, 0.12),
+    transparent 30%
+  ),
+  linear-gradient(
+    135deg,
+    #02101f,
+    #031b36,
+    #020814
+  );
+
+    backdrop-filter: blur(16px);
+  }
+
+.mobile-menu-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+
+  padding: 0 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 26px;
+
+  a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    transition: 0.4s ease;
+
+    padding-left: 0;
+
+    opacity: 0;
+
+    transform: translateX(-40px);
+
+    animation: menuFade 0.6s forwards;
+
+    font-family: $title-font;
+
+    &:hover {
+      color: $gold;
+
+      padding-left: 18px;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      left: -18px;
+      top: 50%;
+
+      width: 0;
+      height: 1px;
+
+      background: $gold;
+
+      transition: 0.4s ease;
+
+      transform: translateY(-50%);
+    }
+
+    &:hover::before {
+      width: 12px;
+    }
+  }
+
+  a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  a:nth-child(2) {
+    animation-delay: 0.18s;
+  }
+
+  a:nth-child(3) {
+    animation-delay: 0.26s;
+  }
+
+  a:nth-child(4) {
+    animation-delay: 0.34s;
+  }
+
+  a:nth-child(5) {
+    animation-delay: 0.42s;
+  }
+}
+
+@keyframes menuFade {
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
   }
 }
 
 @media (max-width: 992px) {
   .main-header {
-    padding: 24px;
+    padding: 5px 24px;
 
-    nav {
-      gap: 24px;
-
-      a {
-        font-size: 13px;
-      }
+    .desktop-nav {
+      display: none;
     }
-  }
-}
 
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-
-    gap: 18px;
-
-    nav {
-      flex-wrap: wrap;
-
-      justify-content: center;
-
-      gap: 18px;
+    .menu-btn {
+      display: block;
     }
-  }
-}
 
-@media (max-width: 480px) {
-  .main-header {
     .logo {
-      font-size: 24px;
-    }
-
-    nav {
-      gap: 12px;
-
-      a {
-        font-size: 11px;
-      }
+      font-size: 28px;
     }
   }
 }

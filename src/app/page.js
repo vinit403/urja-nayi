@@ -10,11 +10,17 @@ export default function HomePage() {
     <main className="home-page">
       <Header />
 
-      <Hero />
+<section id="about">
+  <Hero />
+</section>
 
-      <About />
+<section id="agency">
+  <About />
+</section>
 
-      <Services />
+<section id="my-story">
+  <Services />
+</section>
     </main>
   );
 }
