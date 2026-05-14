@@ -1,14 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-
-  images: {
-    unoptimized: true,
-  },
-
-  basePath: "/urja-nayi",
-
-  assetPrefix: "/urja-nayi/",
+  /* config options here */
+  reactCompiler: true,
 };
 
 export default nextConfig;

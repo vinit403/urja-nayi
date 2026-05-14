@@ -17,7 +17,7 @@ const About = () => {
 
           <div className="image-wrapper">
             <Image
-              src="/urja-nayi/images/urja.jpg"
+              src="/images/urja.jpg"
               alt="Urja Nayi"
               fill
               priority
