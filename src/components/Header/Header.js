@@ -4,10 +4,39 @@ import "./Header.scss";
 
 import { useEffect, useState } from "react";
 
-import {
-  HEADER_LINKS,
-  HERO_DATA,
-} from "@/constants/siteData";
+import { HERO_DATA } from "@/constants/siteData";
+
+const NAV_LINKS = [
+  {
+    label: "ABOUT",
+    id: "about",
+  },
+
+  {
+    label: "AGENCY",
+    id: "agency",
+  },
+
+  {
+    label: "SERVICES",
+    id: "services",
+  },
+
+  {
+    label: "DESTINATIONS",
+    id: "destinations",
+  },
+
+  {
+    label: "MY STORY",
+    id: "journey",
+  },
+
+  {
+    label: "CONNECT",
+    id: "contact",
+  },
+];
 
 const Header = () => {
   const [scrolled, setScrolled] =
@@ -16,9 +45,33 @@ const Header = () => {
   const [menuOpen, setMenuOpen] =
     useState(false);
 
+  const [activeSection, setActiveSection] =
+    useState("about");
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 60);
+
+      const sections =
+        document.querySelectorAll("section");
+
+      sections.forEach((section) => {
+        const top =
+          section.offsetTop - 200;
+
+        const height = section.offsetHeight;
+
+        const id =
+          section.getAttribute("id");
+
+        if (
+          window.scrollY >= top &&
+          window.scrollY <
+            top + height
+        ) {
+          setActiveSection(id);
+        }
+      });
     };
 
     window.addEventListener(
@@ -32,6 +85,40 @@ const Header = () => {
         handleScroll
       );
     };
+  }, []);
+
+  useEffect(() => {
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (
+              entry.isIntersecting
+            ) {
+              entry.target.classList.add(
+                "show-section"
+              );
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+    const hiddenElements =
+      document.querySelectorAll(
+        ".fade-section"
+      );
+
+    hiddenElements.forEach((el) =>
+      observer.observe(el)
+    );
+
+    return () =>
+      hiddenElements.forEach((el) =>
+        observer.unobserve(el)
+      );
   }, []);
 
   const handleScrollToSection = (
@@ -80,23 +167,25 @@ const Header = () => {
         </div>
 
         <nav className="desktop-nav">
-          {HEADER_LINKS.map(
+          {NAV_LINKS.map(
             (item, index) => (
               <a
-                href={`#${item
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")}`}
+                href={`#${item.id}`}
                 key={index}
+                className={
+                  activeSection ===
+                  item.id
+                    ? "active-link"
+                    : ""
+                }
                 onClick={(e) =>
                   handleScrollToSection(
                     e,
-                    item
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")
+                    item.id
                   )
                 }
               >
-                {item}
+                {item.label}
               </a>
             )
           )}
@@ -111,23 +200,19 @@ const Header = () => {
         <div className="mobile-menu-bg"></div>
 
         <div className="mobile-menu-content">
-          {HEADER_LINKS.map(
+          {NAV_LINKS.map(
             (item, index) => (
               <a
                 key={index}
-                href={`#${item
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")}`}
+                href={`#${item.id}`}
                 onClick={(e) =>
                   handleScrollToSection(
                     e,
-                    item
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")
+                    item.id
                   )
                 }
               >
-                {item}
+                {item.label}
               </a>
             )
           )}

@@ -2,3 +2,21 @@
   width: 100%;
   overflow: hidden;
 }
+
+.fade-section {
+  opacity: 0;
+
+  transform: translateY(120px);
+
+  transition:
+    opacity 1.1s ease,
+    transform 1.1s ease;
+
+  will-change: opacity, transform;
+}
+
+.show-section {
+  opacity: 1;
+
+  transform: translateY(0);
+}

@@ -4,7 +4,10 @@ import "./About.scss";
 
 import Image from "next/image";
 
-import { ABOUT_DATA } from "@/constants/siteData";
+import {
+  ABOUT_DATA,
+  ABOUT_SECTION,
+} from "@/constants/siteData";
 
 const About = () => {
   return (
@@ -17,7 +20,7 @@ const About = () => {
 
           <div className="image-wrapper">
             <Image
-              src="/images/urja.jpg"
+              src="/images/urja-2.jpeg"
               alt="Urja Nayi"
               fill
               priority
@@ -26,25 +29,30 @@ const About = () => {
           </div>
 
           <div className="tag-card">
-            BUSINESSWOMAN
-            <br />
-            & FOUNDER
+            {
+              ABOUT_SECTION.founderTag
+            }
           </div>
 
           <div className="date-tag">
-            08 • 10 • 2001
+            {ABOUT_SECTION.birthDate}
           </div>
         </div>
       </div>
 
       <div className="about-right">
         <div className="mini-title">
-          ✦ {ABOUT_DATA.sectionTitle}
+          ✦ {ABOUT_SECTION.miniTitle}
         </div>
 
         <h2>
-          Born to lead,
-          <span> built to explore.</span>
+          {ABOUT_SECTION.title}
+          <span>
+            {" "}
+            {
+              ABOUT_SECTION.highlightTitle
+            }
+          </span>
         </h2>
 
         <div className="about-content">
