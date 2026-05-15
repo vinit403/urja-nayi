@@ -13,7 +13,7 @@ export const HERO_DATA = {
   subTitle: "FOUNDER & CEO · ANANTA URJA TRAVELS",
 
   titleTop: "Urja",
-  titleBottom: "NAYI.",
+  titleBottom: " Nayi",
 
   highlightedText: "A young entrepreneur",
 
