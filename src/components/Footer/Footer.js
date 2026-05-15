@@ -11,12 +11,11 @@ const Footer = () => {
 
       <div className="footer-content">
         <div className="footer-logo">
-          Ananta <span>Urja</span> Travels
+          Urja Nayi
         </div>
 
         <div className="footer-center">
-          Founded by Urja Nayi • Surat,
-          Gujarat
+          Founder of Ananta Urja Travels • Surat, Gujarat
         </div>
 
         <div className="footer-right">
