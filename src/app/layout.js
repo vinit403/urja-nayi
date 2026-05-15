@@ -1,11 +1,15 @@
 import "./globals.scss";
 
 export const metadata = {
+  metadataBase: new URL(
+    "https://urja-nayi-official.vercel.app"
+  ),
+
   title:
-    "Urja Nayi – Founder of Ananta Urja Travels",
+    "Urja Nayi – Luxury Travel Agent & Founder of Ananta Urja Travels",
 
   description:
-    "Urja Nayi is a young entrepreneur and luxury travel agent from Surat, founder of Ananta Urja Travels. She creates personalized travel experiences with premium destinations, unforgettable journeys, curated vacations, cultural escapes, and seamless planning for travelers seeking comfort, elegance, adventure, and memorable experiences across India and international destinations worldwide.",
+    "Urja Nayi is a young entrepreneur and luxury travel agent from Surat, founder of Ananta Urja Travels. She creates personalized travel experiences with premium destinations, unforgettable journeys, curated vacations, cultural escapes, and seamless planning for travelers across India and international destinations worldwide.",
 
   openGraph: {
     title:
@@ -14,14 +18,25 @@ export const metadata = {
     description:
       "Discover luxury travel experiences curated by Urja Nayi, founder of Ananta Urja Travels.",
 
+    url: "https://urja-nayi-official.vercel.app",
+
+    siteName: "Urja Nayi",
+
     images: [
       {
-        url: "/images/urja.jpg",
+        url: "/images/meta-image.jpg",
+
         width: 1200,
+
         height: 630,
+
         alt: "Urja Nayi",
       },
     ],
+
+    locale: "en_US",
+
+    type: "website",
   },
 
   twitter: {
@@ -33,7 +48,11 @@ export const metadata = {
     description:
       "Luxury travel experiences curated by Urja Nayi.",
 
-    images: ["/images/urja.jpg"],
+    images: ["/images/meta-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
