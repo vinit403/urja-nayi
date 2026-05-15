@@ -34,7 +34,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Urja Nayi – Luxury Travel Agent & Founder of Ananta Urja Travels",
+      "Urja Nayi – Founder of Ananta Urja Travels",
 
     description:
       "Discover curated luxury travel experiences, international tours, and unforgettable journeys with Urja Nayi.",
