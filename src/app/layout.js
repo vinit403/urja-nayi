@@ -6,17 +6,38 @@ export const metadata = {
   ),
 
   title:
-    "Urja Nayi – Luxury Travel Agent & Founder of Ananta Urja Travels",
+    "Urja Nayi – Founder of Ananta Urja Travels",
 
   description:
-    "Urja Nayi is a young entrepreneur and luxury travel agent from Surat, founder of Ananta Urja Travels. She creates personalized travel experiences with premium destinations, unforgettable journeys, curated vacations, cultural escapes, and seamless planning for travelers across India and international destinations worldwide.",
+    "Urja Nayi is a young entrepreneur and luxury travel agent from Surat, founder of Ananta Urja Travels. She creates personalized luxury travel experiences, curated vacations, international tours, honeymoon escapes, and unforgettable journeys crafted with elegance, comfort, and premium hospitality across India and worldwide destinations.",
+
+  keywords: [
+    "Urja Nayi",
+    "Luxury Travel Agent",
+    "Ananta Urja Travels",
+    "Travel Consultant Surat",
+    "International Tours",
+    "Luxury Vacations",
+    "Honeymoon Packages",
+    "Travel Planner India",
+  ],
+
+  authors: [
+    {
+      name: "Urja Nayi",
+    },
+  ],
+
+  creator: "Urja Nayi",
+
+  publisher: "Ananta Urja Travels",
 
   openGraph: {
     title:
       "Urja Nayi – Luxury Travel Agent & Founder of Ananta Urja Travels",
 
     description:
-      "Discover luxury travel experiences curated by Urja Nayi, founder of Ananta Urja Travels.",
+      "Discover curated luxury travel experiences, international tours, and unforgettable journeys with Urja Nayi.",
 
     url: "https://urja-nayi-official.vercel.app",
 
@@ -52,7 +73,30 @@ export const metadata = {
   },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        url: "/favicon.ico",
+        href: "/favicon.ico",
+      },
+    ],
+
+    shortcut: "/favicon.ico",
+
+    apple: "/favicon.ico",
+  },
+
+  appleWebApp: {
+    capable: true,
+
+    title: "Urja Nayi",
+
+    statusBarStyle: "default",
+  },
+
+  robots: {
+    index: true,
+
+    follow: true,
   },
 };
 
