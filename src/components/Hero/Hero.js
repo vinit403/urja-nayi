@@ -32,6 +32,28 @@ const Hero = () => {
     };
   }, []);
 
+    const scrollToAbout = () => {
+    const section =
+      document.getElementById("services");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
+    const scrollToContact = () => {
+    const section =
+      document.getElementById("contact");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   const splitWord = (word, className) => {
     return word.split("").map((letter, index) => (
       <span
@@ -93,11 +115,11 @@ const Hero = () => {
         </div>
 
         <div className="button-group">
-          <button className="primary-btn">
+          <button className="primary-btn" onClick={scrollToAbout}>
             {HERO_DATA.primaryButton}
           </button>
 
-          <button className="secondary-btn">
+          <button className="secondary-btn" onClick={scrollToContact}>
             {HERO_DATA.secondaryButton}
           </button>
         </div>
